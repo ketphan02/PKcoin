@@ -1,9 +1,9 @@
-# @ts-ignore
 from .block import Block
 
 class BlockChain:
     def __init__(self):
         self.chain = [self.firstBlock()]
+        self.diff = 4
 
     def firstBlock(self):
         return Block(0, "01/01/2020", { 'amount': 0 }, '')
@@ -13,7 +13,7 @@ class BlockChain:
     
     def addBlock(self, newBlock):
         newBlock.prevHash = self.lastestBlock().hash
-        newBlock.hash = newBlock.hashFunc()
+        newBlock.mineBlock(self.diff)
         self.chain.append(newBlock)
 
     def isValid(self):
@@ -22,9 +22,9 @@ class BlockChain:
             lastBlock = self.chain[i - 1]
             
             if (currentBlock.hash != currentBlock.hashFunc()):
-                return False;
+                return False
 
             if (lastBlock.hash != currentBlock.prevHash):
-                return False;
+                return False
         
-        return True;
+        return True
