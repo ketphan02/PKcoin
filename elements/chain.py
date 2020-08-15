@@ -1,4 +1,4 @@
-from block import Block
+from .block import Block
 
 class BlockChain:
     def __init__(self):
@@ -14,3 +14,5 @@ class BlockChain:
         newBlock.prevHash = self.lastBlock().hash
         newBlock.hash = newBlock.hashFunc()
         self.chain.append(newBlock)
+
+        
