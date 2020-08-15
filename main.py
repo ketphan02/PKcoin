@@ -7,4 +7,4 @@ PKcoin.addBlock(Block(1, "26/05/2020", { 'amount': 100 }))
 
 PKcoin.addBlock(Block(2, "15/08/2020", { 'amount': 60 }))
 
-print(PKcoin)
+print(PKcoin.isValid())
