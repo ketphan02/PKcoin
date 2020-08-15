@@ -1,5 +1,8 @@
-// @ts-ignore
-from .block import Block
+# @ts-ignore
+try:
+    from .block import Block
+except:
+    pass
 
 class BlockChain:
     def __init__(self):
