@@ -1,3 +1,4 @@
+// @ts-ignore
 from .block import Block
 
 class BlockChain:
@@ -14,5 +15,3 @@ class BlockChain:
         newBlock.prevHash = self.lastBlock().hash
         newBlock.hash = newBlock.hashFunc()
         self.chain.append(newBlock)
-
-        

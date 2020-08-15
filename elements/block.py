@@ -1,4 +1,5 @@
 import hashlib
+import json
 
 class Block:
     def __init__(self, index, datetime, data, prevHash=''):
@@ -10,6 +11,6 @@ class Block:
         
     def hashFunc(self):
         
-        hashData = str(self.index) + str(self.datetime) + str(self.data) + self.prevHash
+        hashData = str(self.index) + str(self.datetime) + str(json.dumps(self.data)) + self.prevHash
         hashData = hashData.encode()
         return str(hashlib.sha256(hashData))
