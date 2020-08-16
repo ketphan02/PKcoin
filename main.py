@@ -1,8 +1,11 @@
 from elements.chain import BlockChain 
 from elements.block import Block
+from elements.transactions import Transactions
 
 PKcoin = BlockChain()
 
-PKcoin.addBlock(Block(1, "26/05/2020", { 'amount': 100 }))
+PKcoin.minePendingTransactions('PhanKiet')
+print(PKcoin.getBalance('PhanKiet'))
 
-PKcoin.addBlock(Block(2, "15/08/2020", { 'amount': 60 }))
+PKcoin.minePendingTransactions('PhanKiet')
+print(PKcoin.getBalance('PhanKiet'))
