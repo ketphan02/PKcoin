@@ -20,3 +20,9 @@ class Block:
             self.hash = self.hashFunc()
 
         print(self.hash)
+
+    def hasValidTransactions(self):
+        for trans in self.transactions:
+            if not trans.isValid():
+                return False
+        return True
